@@ -10,6 +10,7 @@ void InputManager::GetInput(unsigned char key, int x, int y)
 
 bool InputManager::IsKeyPressed(unsigned char key)
 {
+	std::cout << m_pressedKey;
 	return key == m_pressedKey;
 }
 

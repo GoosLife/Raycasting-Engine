@@ -5,6 +5,11 @@ class Map
 {
 public:
 	Map(int width, int height, int cellSize, int* mapLayout) : m_width(width), m_height(height), m_cellSize(cellSize), m_mapLayout(mapLayout) {};
+
+	int GetWidth();
+	int GetHeight();
+	int* GetLayout();
+
 	void DrawMap2D();
 
 private:

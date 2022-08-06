@@ -1,12 +1,13 @@
 #include "InputManager.h"
 #include "Map.h"
 #include "Player.h"
+#include "Raycasting Engine.h"
+#include "Raycaster.h"
 
 #include <GL/glut.h>
 #include<iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Raycasting Engine.h"
 
 int* testLevel = new int[]
 {
@@ -20,8 +21,9 @@ int* testLevel = new int[]
 	1, 1, 1, 1, 1, 1, 1, 1,
 };
 
-Player* p = new Player(300, 300);
+Player* p = new Player(300, 300, 0);
 Map* m = new Map(8, 8, 64, testLevel);
+Raycaster* r = new Raycaster(p->GetAngle());
 
 void init()
 {
@@ -46,6 +48,7 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	m->DrawMap2D();
 	p->DrawPlayer();
+	r->DrawRays3D(p->GetAngle(), p->GetY(), p->GetX(), m->GetWidth(), m->GetHeight(), m->GetLayout());
 	glutSwapBuffers();
 }
 

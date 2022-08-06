@@ -1,5 +1,20 @@
 #include "Map.h"
 
+int Map::GetWidth()
+{
+	return m_width;
+}
+
+int Map::GetHeight()
+{
+	return m_height;
+}
+
+int* Map::GetLayout()
+{
+	return m_mapLayout;
+}
+
 void Map::DrawMap2D()
 {
 	int x, y, xOffset, yOffset;
