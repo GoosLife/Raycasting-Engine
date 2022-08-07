@@ -11,7 +11,7 @@ class Raycaster
 {
 public:
 	Raycaster(float angle) : m_angle(angle) { m_depthOfField = 0; /* m_ypos = 0; */ };
-	void DrawRays3D(float playerAngle, float playerYPos, float playerXPos, int mapWidth, int mapHeight, int* map);
+	void Draw3DView(float playerAngle, float playerYPos, float playerXPos, int mapWidth, int mapHeight, int* map, int cubeSize, int fov = 60);
 	float Distance(float playerX, float playerY, float rayX, float rayY);
 
 private:

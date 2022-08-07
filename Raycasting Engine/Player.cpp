@@ -96,21 +96,12 @@ void Player::DrawPlayer()
 
 void Player::UpdatePlayer()
 {
-	switch (InputManager::Instance()->GetPressedKey())
-	{
-	case 'w':
-		MovePlayer(m_horizontalDirection,m_verticalDirection);
-		break;
-	case 'a':
+	if (InputManager::Instance()->Keys.w == 1)
+		MovePlayer(m_horizontalDirection, m_verticalDirection);
+	if (InputManager::Instance()->Keys.a == 1)
 		RotatePlayer(-0.1);
-		break;
-	case 's':
-		MovePlayer(-m_horizontalDirection,-m_verticalDirection);
-		break;
-	case 'd':
+	if (InputManager::Instance()->Keys.s == 1)
+		MovePlayer(-m_horizontalDirection, -m_verticalDirection);
+	if (InputManager::Instance()->Keys.d == 1)
 		RotatePlayer(+0.1);
-		break;
-	default:
-		break;
-	}
 }
