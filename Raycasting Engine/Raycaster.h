@@ -5,12 +5,15 @@
 #define PI 3.1415926535
 #define P2 PI/2
 #define P3 3*PI/2
+#define DR 0.0174533
 
 class Raycaster
 {
 public:
 	Raycaster(float angle) : m_angle(angle) { m_depthOfField = 0; /* m_ypos = 0; */ };
 	void DrawRays3D(float playerAngle, float playerYPos, float playerXPos, int mapWidth, int mapHeight, int* map);
+	float Distance(float playerX, float playerY, float rayX, float rayY);
+
 private:
 	float m_angle;
 	float m_ypos;
